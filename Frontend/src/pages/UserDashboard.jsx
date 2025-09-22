@@ -3,8 +3,6 @@ import { AuthContext } from "../context/AuthContext";
 import axios from "axios";
 import { GoogleMap, Marker, useJsApiLoader, InfoWindow } from '@react-google-maps/api'
 import { Card, Rate, Button,Input, message } from "antd";
-import Map from "../components/Map";
-
 
 //user dashboard component
 function UserDashboard() {
