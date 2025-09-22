@@ -8,7 +8,6 @@ The goal of SafeComm is to build a backend system that manages real-time trackin
 
 ## 🔗 Deployed Links
 
-- **Backend (Render):** https://safecomm-transportation-backend.onrender.com
 - **Frontend (Vercel):** https://safe-comm-transportation.vercel.app/
 - 
 ## Folder Structure
