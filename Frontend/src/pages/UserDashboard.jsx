@@ -4,6 +4,7 @@ import axios from "axios";
 import { GoogleMap, Marker, useJsApiLoader, InfoWindow } from '@react-google-maps/api'
 import { Card, Rate, Button,Input, message } from "antd";
 
+
 //user dashboard component
 function UserDashboard() {
     const { token } = useContext(AuthContext) // getting jwt token
@@ -51,7 +52,7 @@ const mockVehicles = [
 
     // fetching live vehicle data from backend
     const fetchLiveVehicles = () => {
-        axios.get('https://safecomm-transportation-backend.onrender.com/transit/live-otd', {
+        axios.get('http://localhost:5000/transit/live-otd', {
             headers: { Authorization: `Bearer ${token}` } // sending jwt token
         })
         .then(res => {
@@ -77,7 +78,7 @@ const mockVehicles = [
             return
         }
 
-         axios.post('https://safecomm-transportation-backend.onrender.com/transit/reports', {
+         axios.post('http://localhost:5000/transit/reports', {
                 routeName: selected.routeName,
                 description: comment,
                 safetyScore: rating|| null
@@ -98,7 +99,7 @@ const mockVehicles = [
 
     // function to fetch average rating for a route
     const fetchAverageRating = (routeName) => {
-    axios.get(`https://safecomm-transportation-backend.onrender.com/rating/${routeName}`, {
+    axios.get(`http://localhost:5000/rating/${routeName}`, {
         headers: { Authorization: `Bearer ${token}` }
     })
     .then(res => setAverageRating(res.data.averageRating))

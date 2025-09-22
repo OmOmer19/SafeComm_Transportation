@@ -14,7 +14,7 @@ function Login(){
     // to handle form submit
     const handleSubmit = (values) =>{
         //sending login req to backend
-        axios.post('https://safecomm-transportation-backend.onrender.com/auth/login', values)
+        axios.post('http://localhost:5000/auth/login', values)
         .then(res =>{
             setToken(res.data.token) //storing jwt token
             setUser({email: values.email}) //setting user email
