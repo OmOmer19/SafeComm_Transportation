@@ -3,7 +3,7 @@ import { AuthContext } from "../context/AuthContext";
 import axios from "axios";
 import { Table, Card, message, Tag,Button } from 'antd'
 import { CheckCircleOutlined, ExclamationCircleOutlined, ClockCircleOutlined } from '@ant-design/icons'
-
+import { useNavigate } from "react-router-dom";
 
 //admin dashboard page component
 function AdminDashboard(){
