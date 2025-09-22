@@ -12,7 +12,7 @@ function AdminDashboard(){
 
     // fetching reports from backend
     const fetchReports = () =>{
-        axios.get('http://localhost:5000/transit/reports',{
+        axios.get('https://safecomm-transportation-backend.onrender.com/transit/reports',{
             headers: {Authorization: `Bearer ${token}`} //sending jwt token
         })
         .then(res =>{

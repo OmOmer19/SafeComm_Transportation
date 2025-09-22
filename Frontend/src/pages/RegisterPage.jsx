@@ -12,7 +12,7 @@ function Register(){
 
      //handleing fomr submissio  using promise chaining
      const handleSubmit = (values) =>{
-        axios.post('http://localhost:5000/auth/register',values)
+        axios.post('https://safecomm-transportation-backend.onrender.com/auth/register',values)
         .then(res =>{
             message.success('registered successfully') //showing success msg(antd property)
             navigate('/login') //move to login

@@ -53,7 +53,7 @@ const mockVehicles = [
 
     // fetching live vehicle data from backend
     const fetchLiveVehicles = () => {
-        axios.get('http://localhost:5000/transit/live-otd', {
+        axios.get('https://safecomm-transportation-backend.onrender.com/transit/live-otd', {
             headers: { Authorization: `Bearer ${token}` } // sending jwt token
         })
         .then(res => {
@@ -79,7 +79,7 @@ const mockVehicles = [
             return
         }
 
-         axios.post('http://localhost:5000/transit/reports', {
+         axios.post('https://safecomm-transportation-backend.onrender.com/transit/reports', {
                 routeName: selected.routeName,
                 description: comment,
                 safetyScore: rating|| null
@@ -100,7 +100,7 @@ const mockVehicles = [
 
     // function to fetch average rating for a route
     const fetchAverageRating = (routeName) => {
-    axios.get(`http://localhost:5000/rating/${routeName}`, {
+    axios.get(`https://safecomm-transportation-backend.onrender.com/rating/${routeName}`, {
         headers: { Authorization: `Bearer ${token}` }
     })
     .then(res => setAverageRating(res.data.averageRating))
