@@ -6,6 +6,28 @@ SafeComm is a community-based safety app aimed at improving public transportatio
 ## Project Goal
 The goal of SafeComm is to build a backend system that manages real-time tracking of public transportation, user interactions for safety ratings, and data storage for transit and user safety reports.
 
+## Folder Structure
+SafeComm/
+├─ backend/
+│  ├─ server.js
+│  ├─ package.json
+│  ├─ routes/
+│  ├─ controllers/
+│  ├─ models/
+│  ├─ configs/
+│  └─ .env
+├─ frontend/
+│  ├─ package.json
+│  ├─ vite.config.js
+│  ├─ tailwind.config.js
+│  ├─ src/
+│  │  ├─ components/
+│  │  ├─ context/
+│  │  ├─ pages/
+│  │  └─ App.jsx
+│  └─ public/
+└─ README.md
+
 ## Minimum Expected Features
 
 ### User Authentication
