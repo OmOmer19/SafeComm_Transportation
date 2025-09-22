@@ -1,151 +1,121 @@
-SafeComm 🚍 – Community-Based Public Transit Safety App
-Introduction
+# SafeComm_Transportation 🚍
 
-SafeComm is a full-stack web application designed to improve public transportation safety. Users can view live transit vehicle locations, submit safety reports, rate routes, and admins can monitor and manage transit safety data in real time. The app provides an intuitive interface for both regular users and admins.
+## Introduction
+SafeComm is a community-based safety app aimed at improving public transportation. The platform tracks real-time locations of public transit vehicles, allows users to submit safety reports, and provides route safety ratings. It helps commuters make informed decisions based on real-time data and community feedback.
 
-Project Type
+## Project Goal
+The goal of SafeComm is to build a backend system that manages real-time tracking of public transportation, user interactions for safety ratings, and data storage for transit and user safety reports.
 
-Full-stack Web Application
+## Minimum Expected Features
 
-Deployed App
+### User Authentication
+- JWT-based user registration and login system to authenticate users securely.
 
-Backend: [Add your deployed backend URL here]
+### Transit Tracking API
+- API to track public transportation vehicles in real time, using data from third-party services such as Google Maps.
 
-Frontend: [Add your deployed frontend URL here]
+### Role-Based Access Control (RBAC)
+- Regular users can rate routes and view transit information.
+- Admins can manage transit data and monitor safety reports.
 
-Directory Structure
-SafeComm/
-├─ backend/
-│  ├─ server.js
-│  ├─ package.json
-│  ├─ routes/
-│  ├─ controllers/
-│  ├─ models/
-│  ├─ configs/
-│  └─ .env
-├─ frontend/
-│  ├─ package.json
-│  ├─ vite.config.js
-│  ├─ tailwind.config.js
-│  ├─ src/
-│  │  ├─ components/
-│  │  ├─ context/
-│  │  ├─ pages/
-│  │  └─ App.jsx
-│  └─ public/
-└─ README.md
+### Third-Party Location Integration
+- Integration with a location API (e.g., Google Maps) to provide live updates on vehicle locations.
 
-Features
+### Route Safety Rating Service
+- Users can rate the safety of public transit routes to help others make informed travel decisions.
 
-Real-time tracking of public transit vehicles using Google Maps
+### MongoDB Integration
+- Store user profiles, transit data, route ratings, and reported safety issues in MongoDB.
 
-Role-based authentication (User/Admin)
+## Technology Stack
 
-Users can submit safety reports and rate routes
+- **Frontend:** React.js, Vite, Tailwind CSS, Ant Design
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB, Mongoose
+- **Authentication:** JWT, Bcrypt
+- **APIs:** Google Maps API
+- **Testing:** Mocha or Jest
 
-Admins can view all reports and monitor route safety
 
-JWT-based authentication & secure password hashing
+### API Testing
+- Unit and integration tests for all APIs using Mocha or Jest.
 
-Responsive UI built with React, Tailwind CSS, and Ant Design
+  ## API Endpoints
 
-Technology Stack
+### Authentication
+- `POST /auth/register` – Register a new user
+- `POST /auth/login` – Login
 
-Frontend: React.js, Vite, Tailwind CSS, Ant Design
+### Transit
+- `GET /transit/live` – Live transit vehicle locations (user/admin)
+- `GET /transit/arrival/:routeName` – Estimated arrival times (user/admin)
+- `GET /transit/live-otd` – Live vehicle data (user/admin)
 
-Backend: Node.js, Express.js
+### Reports
+- `POST /transit/reports` – Submit a safety report (user)
+- `GET /transit/reports/user` – Get user-submitted reports (user)
+- `GET /transit/reports` – Get all reports (admin)
 
-Database: MongoDB, Mongoose
+### Ratings
+- `POST /ratings` – Submit route rating (user/admin)
+- `GET /ratings/:routeName` – Get average route rating (user/admin)
 
-Authentication: JWT, Bcrypt
+## Setup & Installation
 
-APIs: Google Maps API
+### Backend
 
-API Endpoints
-
-Authentication:
-
-POST /auth/register – Register new user
-
-POST /auth/login – Login
-
-Transit:
-
-GET /transit/live – Live transit vehicles (user/admin)
-
-GET /transit/arrival/:routeName – Estimated arrival (user/admin)
-
-GET /transit/live-otd – Live vehicle data (user/admin)
-
-Reports:
-
-POST /transit/reports – Submit safety report (user)
-
-GET /transit/reports/user – User reports (user)
-
-GET /transit/reports – All reports (admin)
-
-Ratings:
-
-POST /ratings – Submit route rating (user/admin)
-
-GET /ratings/:routeName – Get average route rating (user/admin)
-
-Setup & Installation
-Backend
+1. Navigate to the backend folder and install dependencies:
+```bash
 cd SafeComm/backend
-npm install
+npm install 
 
-
-Create a .env file:
-
+---
+```
+2. Create a `.env` file in the `backend` folder with the following content:
+```env
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret
+---
 
-
-Start server:
-
+```
+3. Start the backend server:
+```bash
 npm run dev
+---
+```
+### Frontend Setup
 
 
-Runs on http://localhost:5000
-
-Frontend
+1. Navigate to the frontend folder and install dependencies:
+```bash
 cd SafeComm/frontend
 npm install
-
-
-Create a .env file:
-
+---
+```
+2. Create a `.env` file in the `frontend` folder with your Google Maps API key:
+```env
 VITE_GOOGLE_MAPS_API_KEY=your_google_maps_api_key
+---
+```
+## Usage
 
+1. Register as a **User** or **Admin**.
+2. **User Dashboard:**  
+   - View live transit vehicles  
+   - Submit safety reports  
+   - Rate routes
+3. **Admin Dashboard:**  
+   - View all reports  
+   - Monitor route ratings  
+   - Manage transit safety data
 
-Start frontend:
+### Demo Credentials
 
-npm run dev
+**Admin:**  
+- Email: admin@example.com  
+- Password: admin123
 
-
-Runs on http://localhost:5173
-
-Usage
-
-Register as a User or Admin
-
-User Dashboard: View live vehicles, submit reports, rate routes
-
-Admin Dashboard: View all reports, monitor ratings, manage transit safety data
-
-Demo Credentials
-
-Admin:
-
-Email: admin@example.com
-
-Password: admin123
-
-User:
-
-Email: user@example.com
-
-Password: user123
+**User:**  
+- Email: user@example.com  
+- Password: user123
