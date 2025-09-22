@@ -6,7 +6,7 @@ import Register from './pages/RegisterPage'
 import Login from './pages/LoginPage'
 import UserDashboard from './pages/UserDashboard'
 import AdminDashboard from './pages/AdminDashboard'
-
+import Footer from './component/Footer'
 
 //creating private route component for protecting pages
 const PrivateRoute = ({ children }) => {
@@ -18,6 +18,7 @@ const PrivateRoute = ({ children }) => {
 function App() {
 
   return (
+    <>
     <Routes>
 
       {/*default to login */}
@@ -42,6 +43,8 @@ function App() {
         {/* for unknown routes */}
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
+    <Footer/>
+    </>
   )
 }
 
