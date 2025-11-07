@@ -6,6 +6,10 @@ SafeComm is a community-based safety app aimed at improving public transportatio
 ## Project Goal
 The goal of SafeComm is to build a backend system that manages real-time tracking of public transportation, user interactions for safety ratings, and data storage for transit and user safety reports.
 
+## Deployed Links
+- **Frontend:** [https://safe-comm-transportation.vercel.app](https://safe-comm-transportation.vercel.app)
+- **Backend API:** [https://safecomm-transportation.onrender.com](https://safecomm-transportation.onrender.com)
+
 ## Folder Structure
 SafeComm/
 ├─ backend/
