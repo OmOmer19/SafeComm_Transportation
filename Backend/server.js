@@ -11,7 +11,15 @@ const reportRoutes = require('./routes/reportRoutes')
 const app = express()
 app.use(express.json()) //to parse json req bodies
 
-app.use(cors())   // enabling cors for all routes, allowing cross-origin requests
+//app.use(cors())   // enabling cors for all routes, allowing cross-origin requests
+
+app.use(cors({
+    origin: 'https://safe-comm-transportation.vercel.app', 
+    methods: ['GET','POST','PUT','DELETE','OPTIONS'],
+    allowedHeaders: ['Content-Type','Authorization'],
+    credentials: true // if using cookies/auth headers
+}));
+
 
 connectToDB()
 
