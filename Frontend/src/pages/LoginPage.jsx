@@ -6,6 +6,7 @@ import { useNavigate, Link } from "react-router-dom";
 import {Form, Input, Button, Card, message} from 'antd'
 import { UserOutlined, LockOutlined } from '@ant-design/icons'
 import { useState } from "react";
+import { BASE_URL } from "../config";
 
 
 //login page
@@ -16,7 +17,7 @@ function Login(){
     // to handle form submit
     const handleSubmit = (values) =>{
         //sending login req to backend
-        axios.post('http://localhost:5000/auth/login', values)
+        axios.post(`${BASE_URL}/auth/login`, values)
         .then(res =>{
             setToken(res.data.token) //storing jwt token
             setUser({email: values.email}) //setting user email

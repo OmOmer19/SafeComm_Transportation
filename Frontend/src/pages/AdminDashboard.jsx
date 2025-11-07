@@ -1,6 +1,7 @@
 import React, {useState, useEffect, useContext} from "react";
 import { AuthContext } from "../context/AuthContext";
 import axios from "axios";
+import {BASE_URL} from '../config'
 import { Table, Card, message, Tag,Button } from 'antd'
 import { CheckCircleOutlined, ExclamationCircleOutlined, ClockCircleOutlined } from '@ant-design/icons'
 import { useNavigate } from "react-router-dom";
@@ -12,7 +13,7 @@ function AdminDashboard(){
 
     // fetching reports from backend
     const fetchReports = () =>{
-        axios.get('http://localhost:5000/transit/reports',{
+        axios.get(`${BASE_URL}/transit/reports`,{
             headers: {Authorization: `Bearer ${token}`} //sending jwt token
         })
         .then(res =>{

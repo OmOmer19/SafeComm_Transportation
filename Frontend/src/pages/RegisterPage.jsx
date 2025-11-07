@@ -3,6 +3,7 @@ import { useNavigate, Link } from 'react-router-dom'
 import axios from 'axios'
 import { Form, Input, Button, Card, message , Select} from 'antd'
 import { UserOutlined, MailOutlined, LockOutlined } from '@ant-design/icons'
+import { BASE_URL } from '../config'
 
 const {Option} = Select
 
@@ -13,7 +14,7 @@ function Register(){
 
      //handleing fomr submissio  using promise chaining
      const handleSubmit = (values) =>{
-        axios.post('http://localhost:5000/auth/register',values)
+        axios.post(`${BASE_URL}/auth/register`,values)
         .then(res =>{
             message.success('registered successfully') //showing success msg(antd property)
             navigate('/login') //move to login
